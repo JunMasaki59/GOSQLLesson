@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  go-db-sql-Lesson1:
+    image: mysql:5.7
+    container_name: go-db-sql-Lesson1
+    ports:
+      - "13306:3306"
+    volumes:
+      - ./data/db:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: worldcup_db
+      MYSQL_USER: FIFA
+      MYSQL_PASSWORD: fifa
+      LANG: ja_JP.UTF-8
